@@ -1,7 +1,13 @@
 import threading
+"""
+Locks are usually used when you have many threads trying to access same variable usually a global variable 
+and they're trying to make changes to the shared global variable. So what can happen is when two threads
+are making changes to variable at the same time instead of these changes stacking up we might only get one 
+change to the original value
+"""
 x = 0
 COUNT = 100000
-
+lock = threading.Lock()
 def adding_2 ():
     global x 
     with lock:

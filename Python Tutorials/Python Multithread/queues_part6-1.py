@@ -15,7 +15,9 @@ q = queue.Queue()
 q.put(5)
 q.put(4)
 q.put('ali')
-q.put(8,4-3,'veli')
+
+#Çift parantez atılırsa parantez içerisindeki bütün argümanları alır.
+q.put((8,4-3,'veli'))
 
 # q.get() aksiyonu q'daki itemleri toplar. Eğer 4 kere q.put() işlemi ve 3 kere q.get() yaparsak q.empty() = False çıkar.
 # Nedeni ise 4. q.put() işlemi q.get() komutu ile alınmadığı için q boş olmaz. True olması için q.put() kadar q.get() olmalı. 
@@ -25,7 +27,6 @@ print(q.get())
 print(q.get())
 print(q.empty())
 """
-
 """
 #SECOND EXAMPLE
 
@@ -81,7 +82,7 @@ q4.put(2)
 print(q4.get())
 print('first item gotten')
 
-# İlk item main threadden alındıktan sonra diğer treadde stucklanır ve 10 saniye bekler. Sonra diğer item de alınır ve kod sonlanır.
+# İlk item main threadden alındıktan sonra diğer threadde stucklanır ve 10 saniye bekler. Sonra diğer item de alınır ve kod sonlanır.
 print(q4.get())
 print('finished')
 """

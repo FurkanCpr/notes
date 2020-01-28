@@ -18,7 +18,7 @@ def sleeper (n, name):
 
 # initialize thread
 t = threading.Thread(target=sleeper, name = 'thread1', args = (5, 'thread1'))
-
+zz
 # run a thread
 t.start()
 """
